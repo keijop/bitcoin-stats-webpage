@@ -24,7 +24,7 @@ export const createChart = data => {
   // line
   const line = d3
     .line()
-    .curve(d3.curveNatural)
+    .curve(d3.curveMonotoneX) // d3.curveNatural
     .x(d => xScale(new Date(d.date)))
     .y(d => yScale(d.price))
 
