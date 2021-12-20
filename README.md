@@ -20,8 +20,8 @@ This is a solution to the [Vincit Rising Star 2021 pre-assignment](https://vinci
 
 ### Screenshot
 
-![](./assets/screenshot1.jpg)
-![](./assets/screenshot2.jpg)
+![](./assets/screenshot1.png)
+![](./assets/screenshot2.png)
 
 
 ### Links
