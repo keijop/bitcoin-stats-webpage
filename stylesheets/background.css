@@ -1,0 +1,61 @@
+/* 
+
+BACKGROUND
+Stars are created with radial-gradient background image.
+Four images repeating create four rows of stars.
+Position and size "scatter stars around"
+
+ANIMATION
+Change background image position - stars moving
+Change radial-gradient values - stars twinkling 
+
+*/
+
+.body{
+  background-color: #0D0023;
+  background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 3px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  background-repeat: space repeat;
+  animation: sky 15s ease-out infinite alternate-reverse;
+  } 
+
+@keyframes sky {
+  5%{
+      background-image:
+    radial-gradient(white, rgba(255,255,255,.3) 3px, transparent 5px),
+    radial-gradient(white, rgba(255,255,255,.15) 2px, transparent 4px),
+    radial-gradient(white, rgba(255,255,255,.1) 4px, transparent 8px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 3px);
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  }
+  7%{
+      background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 3px);
+  }
+  55%{
+      background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 3px, transparent 5px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+    radial-gradient(white, rgba(255,255,255,.1) 4px, transparent 8px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 3px, transparent 4px);
+  }
+  57%{
+      background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 3px);
+  }
+  100%{
+    background-position: 0px -50px, 40px -60px, 130px 200px, 170px 180px;
+  }
+}
+

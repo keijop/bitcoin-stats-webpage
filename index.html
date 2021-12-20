@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./stylesheets/stylesheet.css" />
+    <link rel="stylesheet" href="./stylesheets/background.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <title>Bitcoin stats</title>
+  </head>
+  <body class="body">
+    <div class="content">
+      <h1>Bitcoin historical data</h1>
+      <p>Start by choosing date range</p>
+      <form class="form">
+        <div class="form__control">
+          <label for="startDate">from </label>
+          <input type="date" id="startDate" required />
+        </div>
+        <br />
+        <div class="form__control">
+          <label for="endDate">to </label>
+          <input type="date" id="endDate" required />
+        </div>
+        <br />
+        <button class="form__control form__submit btn" type="submit">
+          submit
+        </button>
+      </form>
+      <div class="info"></div>
+      <section class="results hide">
+        <div class="results__card maxVolume">
+          <span>
+            Maximum <br />
+            volume
+          </span>
+          <p></p>
+        </div>
+        <div class="results__card bearishTrend">
+          <span>
+            Longest <br />
+            bearish trend
+          </span>
+          <p></p>
+        </div>
+        <div class="results__card buy">
+          <span>buy</span>
+          <p></p>
+        </div>
+        <div class="results__card sell">
+          <span>sell</span>
+          <p></p>
+        </div>
+        <div class="results__card graph" tabindex="0">
+          <span>show graph</span>
+
+          <i class="fas fa-chart-line fa-4x"></i>
+        </div>
+      </section>
+      <section class="dataviz"></section>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/helpers.js"></script>
+    <script type="module" src="./js/dataviz.js"></script>
+    <script src="https://unpkg.com/d3@7.2.0/dist/d3.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1c5370e6af.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    --border-radius: 5px;
+    --violet-primary: rgba(50, 13, 87, 0.9);
+    --accent-color: #FF8AF2;
+    accent-color: var(--accent-color);
+    letter-spacing: .15rem;
+    line-height: 1.6;
+}
+html,    body{
+    margin: 0;
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+h1 {
+    text-align: center;
+}
+.content{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--border-radius);
+    margin: 25vh 0;
+    transition: 1s;
+}
+
+.content > *{
+    margin: 1rem;
+}
+
+.form__control{
+    padding: 0.5rem;
+}
+
+.form__control, .form__control input{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    background-color: var(--violet-primary);
+    color: white;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.form__control label{
+    display: inline-block;
+    width: 4rem;
+    padding-left: 1.2rem;
+    cursor: pointer;
+}
+
+.form__control input{
+    padding-left: 1.2rem;
+    margin-left: .5rem;
+    background-color: transparent;
+}
+
+.btn{
+    width: 100%;
+    padding: .5rem;
+    letter-spacing: .2rem;
+}
+
+.btn:hover, .btn:focus, .form__control:hover, .form__control input:focus, .graph:hover{
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.7);
+}
+
+
+.results{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 5rem;
+    opacity: 1;
+    transition: 1s 0.5s;
+}
+
+.results__card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: var(--violet-primary);
+    text-transform: uppercase;
+    border-radius: var(--border-radius);
+    min-width: 14vw;
+    min-height: 20vh;
+    box-shadow: 2px 2px 2px #251443;
+   
+}
+
+.results__card p{
+    padding: 3rem 0 ;
+    font-size: 1.6rem;
+    white-space: pre;
+}
+
+.results__card span{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.dataviz{
+    width: 100vw;
+}
+
+.graph{
+    display: none;
+    cursor: pointer;
+}
+
+.graph span{
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+.graph:hover, .graph:focus{
+    box-shadow: 0 0 10px 1px var(--accent-color);
+}
+.graph:hover *{
+    color: var(--accent-color);
+}
+
+.up{
+    margin: 2rem 0;
+}
+
+.hide{
+    position: absolute;
+    top: -9999px;
+    opacity: 0;
+}
+
+/* DATAVIZ */
+
+ .dataviz{
+        width: 90vw;
+    }
+
+svg .viz-area{
+    fill: none;
+    stroke: var(--accent-color);
+
+}
+
+.tooltip{
+    border-radius: var(--border-radius);
+    background-color: var(--violet-primary);
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid white;
+}
+
+.dot{
+    fill: var(--accent-color);
+    /* stroke: pink; */
+}
+/* HIDE AXES LINE AND TICKS */
+.yAxis path, .xAxis path, .xAxis line{
+    stroke: none;
+}
+/* CREATE Y GRID */
+.yAxis g line{
+   stroke: white; 
+   stroke-dasharray: 3 10;
+   opacity: 0.3; 
+}
+.tick text{
+    fill: white;
+}
+@media screen and (min-width: 700px){
+     .dataviz{
+        width: 70vw;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .results{
+        flex-direction: row;
+    }
+    .graph{
+        display: flex;
+    }
+}
