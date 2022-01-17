@@ -65,7 +65,7 @@ const submitHandler = async event => {
   } else if (end - start < 7776000) {
     data = await formatDataToDaily(dataFromAPI, 'hour')
   } else {
-    data = await getData(url)
+    data = dataFromAPI
   }
 
   const maxVolume = await maxCap(data)
@@ -73,7 +73,7 @@ const submitHandler = async event => {
   const buySellDates = await optimalBuySellDays(data)
 
   const buy = buySellDates.buy
-    ? new Date(buySellDates.sell).toLocaleDateString()
+    ? new Date(buySellDates.buy).toLocaleDateString()
     : 'HOLD'
 
   const sell = buySellDates.sell
